@@ -1,0 +1,8 @@
+*{
+    border: 2px solid black;
+}
+.splitter{
+    height: 600px;
+    width: 100;
+    border: 2px solid red;
+}
