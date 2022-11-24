@@ -1,16 +1,15 @@
-import { throws } from "assert";
 import { Product } from "../../../Types/Product";
 import { IRepository } from "../../Abstract/IRepository";
-import jsonProducts from './../../LocalData/items.json'
+import jsonProducts from '../../LocalData/items.json'
 
-export class ProductRepository implements IRepository<Product>{
+export class JsonProductRepository implements IRepository<Product>{
 
-    
-    getByFilter(filter: object): Product[] {
-        throw new Error("Method not implemented.");
+
+    async getByFilter(filter: object): Promise<Product[]> {
+       return []
     }
 
-    get(addedNum: string): Product {
+    async get(addedNum: string): Promise<Product> {
         jsonProducts.forEach(element => {
             if(element.added+''=== addedNum){
                 return element
@@ -30,7 +29,7 @@ export class ProductRepository implements IRepository<Product>{
     }
 
 
-    getAll(): Product[] {
+    async getAll(): Promise<Product[]> {
              const allProducts:Array<Product> = jsonProducts.map((p)=>{ return { 
                 name:p.name,
                 description:p.description,
@@ -42,8 +41,7 @@ export class ProductRepository implements IRepository<Product>{
                 slug:p.slug,
             }}
             )
-
-            return allProducts;
+            return allProducts
     }
 
 }

@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import { Company } from '../Types/Company'
 import isIncluding from '../util/isSelected'
-import { CompanyRepository } from '../Repository/Concrete/FromJson/CompanyRepository'
+import { JsonCompanyRepository } from '../Repository/Concrete/FromJson/JsonCompanyRepository'
 
 export default function BrandFilter() {
 const emptyCompanyArray:Array<Company> = []
 const [selectedCompanies,setSelectedCompanies] = useState(emptyCompanyArray)
 const [allCompanies, setAllCompanies] = useState(emptyCompanyArray)
 const [brandFilterOpened, setBrandFilterOpened] = useState(false)
-const companyService = new CompanyRepository()
+const companyService = new JsonCompanyRepository()
 
 const brandsToggleHandler = ()=>{
   setBrandFilterOpened(!brandFilterOpened)
 }
 
+const fetchCompanies = async()=>{
+  const allCompanies = await companyService.getAll()
+  setAllCompanies(allCompanies
+    )
+}
+
 useEffect(()=>{
-  setAllCompanies(companyService.getAll())
+  fetchCompanies()
 }, [])
 
 const chooseBrandHandler = (clickedCompany:Company) =>{
@@ -28,9 +34,8 @@ const chooseBrandHandler = (clickedCompany:Company) =>{
         setSelectedCompanies([...selectedCompanies,clickedCompany])
     }
   } 
+
   return (
-
-
     <>
     <button className='home__brand-filters-opener' onClick={brandsToggleHandler}>{'Brands'}  {brandFilterOpened ? '':'►'}</button>
     <div className={`home__brands-container ${brandFilterOpened ? '' : '--closed'}`}>

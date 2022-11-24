@@ -4,7 +4,7 @@ export default function ProductCard(product:Product) {
   
   return (
 
-    <>
+    
         <div key={product.name} className='products-container__product-card'>
             <div className='product-card__imgBox' style={{backgroundImage:`url(${product.image})`}}></div>
             <div className="product-card__info-container">
@@ -17,7 +17,7 @@ export default function ProductCard(product:Product) {
           <img className='add-to-cart-btn__cart-img' src="https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/shopping-cart-icon.png" alt="cart-img" />
         </button>
       </div>
-    </>
+    
     
   )
 }
