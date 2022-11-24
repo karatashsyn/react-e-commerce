@@ -1,13 +1,13 @@
 import React from 'react'
 import SearchBar from '../Components/SearchBar'
-import PriceFilter from '../Components/Filters/PriceFilter'
-import BrandFilter from '../Components/Filters/BrandFilter'
+import PriceFilter from '../Components/PriceFilter'
+import BrandFilter from '../Components/BrandFilter'
 import   '.././Styles/home.css'
 import ProductsBox from './../Components/ProductsBox'
 export default function Home() {
     
   return (
-    <body>
+    <>
         <div className="home__splitter">
             <div className="home__left">
                 <div className="home__filters-title">Filters</div>
@@ -20,12 +20,15 @@ export default function Home() {
             <div className="home__right">
                 <div className="home__navbar">
                     <SearchBar/>
-                    <button className="home_cart-btn"></button>
+                    <div className="home__cart-btn">
+                        Go to cart
+                        <div className="cart-btn__badge">0</div>
+                    </div>
                 </div>
             <ProductsBox/>
             </div>
             
         </div>
-    </body>
+    </>
   )
 }

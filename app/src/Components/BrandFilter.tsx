@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Company } from '../../Types/Company'
-import isIncluding from '../../util/isSelected'
-import { CompanyRepository } from '../../Repository/Concrete/FromJson/CompanyRepository'
+import { Company } from '../Types/Company'
+import isIncluding from '../util/isSelected'
+import { CompanyRepository } from '../Repository/Concrete/FromJson/CompanyRepository'
 
 export default function BrandFilter() {
 const emptyCompanyArray:Array<Company> = []
@@ -32,7 +32,7 @@ const chooseBrandHandler = (clickedCompany:Company) =>{
 
 
     <>
-    <button className='home__brand-filters-opener' onClick={brandsToggleHandler}>{'Brands'}  {brandFilterOpened ? '▼':'►'}</button>
+    <button className='home__brand-filters-opener' onClick={brandsToggleHandler}>{'Brands'}  {brandFilterOpened ? '':'►'}</button>
     <div className={`home__brands-container ${brandFilterOpened ? '' : '--closed'}`}>
         {
             allCompanies.map( (c:Company)=>(<div onClick={()=>chooseBrandHandler(c)} key={c.account}

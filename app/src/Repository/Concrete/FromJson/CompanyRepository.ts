@@ -12,10 +12,6 @@ export class CompanyRepository implements IRepository<Company>{
         throw new Error("Method not implemented.");
     }
     getAll(): Company[] {
-        console.log("heeyy");
-        
-        console.log(jsonCompanies);
-        
             const allCompanies:Array<Company> = jsonCompanies.map((c)=>{ return { 
                 name:c.name,
                 state:c.state,
