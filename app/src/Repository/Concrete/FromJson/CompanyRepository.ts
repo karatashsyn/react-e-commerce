@@ -1,12 +1,21 @@
 import { Company } from "../../../Types/Company";
-import { ICompanyRepository } from "../../Abstract/ICompanyRepository";
+import { IRepository } from "../../Abstract/IRepository";
 import jsonCompanies from './../../LocalData/companies.json'
-export class CompanyRepositroy implements ICompanyRepository<Company>{
+export class CompanyRepository implements IRepository<Company>{
+
+    
+    getByFilter(filter: object): Company[] {
+        throw new Error("Method not implemented.");
+    }
+    
     get(account: string): Company {
         throw new Error("Method not implemented.");
     }
-    getAll(filter: string): Company[] {
-        if(!filter){
+    getAll(): Company[] {
+        console.log("heeyy");
+        
+        console.log(jsonCompanies);
+        
             const allCompanies:Array<Company> = jsonCompanies.map((c)=>{ return { 
                 name:c.name,
                 state:c.state,
@@ -15,11 +24,7 @@ export class CompanyRepositroy implements ICompanyRepository<Company>{
                 logo:'https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg'
             }}
             )
-
             return allCompanies;
-        }
-        else{
-            return []// Here will be applied
-        }
+        
     }
 }

@@ -1,11 +1,37 @@
+import { throws } from "assert";
 import { Product } from "../../../Types/Product";
-import { IProductRepository } from "../../Abstract/IProductRepository";
+import { IRepository } from "../../Abstract/IRepository";
 import jsonProducts from './../../LocalData/items.json'
 
-export class ProductRepository implements IProductRepository<Product>{
-    getAll(filter: string): Product[] {
-        if(!filter){
-            const allProducts:Array<Product> = jsonProducts.map((p)=>{ return { 
+export class ProductRepository implements IRepository<Product>{
+
+    
+    getByFilter(filter: object): Product[] {
+        throw new Error("Method not implemented.");
+    }
+
+    get(addedNum: string): Product {
+        jsonProducts.forEach(element => {
+            if(element.added+''=== addedNum){
+                return element
+            }
+              
+        });
+        return {
+            name: "string",
+            description: "string",
+            price: 0,
+            image: "string",
+            tags: [],
+            type: "",
+            brand: "",
+            slug: "",
+        }
+    }
+
+
+    getAll(): Product[] {
+             const allProducts:Array<Product> = jsonProducts.map((p)=>{ return { 
                 name:p.name,
                 description:p.description,
                 price:p.price,
@@ -18,11 +44,6 @@ export class ProductRepository implements IProductRepository<Product>{
             )
 
             return allProducts;
-        }
-        else{
-            return []// Here will be applied
-        }
-
     }
 
 }
