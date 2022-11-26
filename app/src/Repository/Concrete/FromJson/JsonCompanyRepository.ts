@@ -1,5 +1,3 @@
-import { rejects } from "assert";
-import { resolve } from "path";
 import { Company } from "../../../Types/Company";
 import { IRepository } from "../../Abstract/IRepository";
 import jsonCompanies from '../../LocalData/companies.json'

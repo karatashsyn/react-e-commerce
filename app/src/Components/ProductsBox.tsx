@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Product } from '../Types/Product'
+// import { ApiProductRepository } from '../Repository/Concrete/ProductApi/ApiProductRepository'
 import { JsonProductRepository } from '../Repository/Concrete/FromJson/JsonProductRepository'
-import { ApiProductRepository } from '../Repository/Concrete/ProductApi/ApiProductRepository'
 import ProductCard from './ProductCard'
-import { text } from 'stream/consumers'
 
 
 export default function ProductsBox() {
     const ELEM_PER_PAGE = 16
     const emptyProductArray:Array<Product>= []
-    const productService = new ApiProductRepository()
+    const productService = new JsonProductRepository()
     const [allProducts, setAllProducts] = useState(emptyProductArray)
     const [pageProducts, setPageProducts] = useState(emptyProductArray)
     const [currentPage, setCurrentPage] = useState(1)
@@ -24,7 +23,6 @@ export default function ProductsBox() {
     const fetchData = async ()=>{
         setLoading(true)
         const res = await productService.getAll()
-        
         setAllProducts(res)
         setLoading(false)
     }
@@ -48,7 +46,9 @@ export default function ProductsBox() {
 
     if(loading){
         return (
-            <div className='home__loading-txt'>Loading...</div>
+            <div className='home__loading-icon-container'>
+               <img alt='loading-icon' className='home__loading-icon' src='https://images.pond5.com/circle-loading-icon-transparent-background-footage-126963108_iconl.jpeg'></img>
+            </div>
           )
     }
     else{

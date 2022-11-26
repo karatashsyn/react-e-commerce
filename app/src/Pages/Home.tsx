@@ -4,6 +4,9 @@ import PriceFilter from '../Components/PriceFilter'
 import BrandFilter from '../Components/BrandFilter'
 import   '.././Styles/home.css'
 import ProductsBox from './../Components/ProductsBox'
+
+
+
 export default function Home() {
     
   return (
