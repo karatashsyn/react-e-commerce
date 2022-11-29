@@ -17,7 +17,6 @@ export default function Home() {
     const productService = new ApiProductRepository()
     const [allProducts, setAllProducts] = useState(emptyProductArray)
     const [loading, setLoading] = useState(false);
-    // const filter = useSelector((state:any)=>state.filter)
 
     const fetchData = async ()=>{
         setLoading(true)
