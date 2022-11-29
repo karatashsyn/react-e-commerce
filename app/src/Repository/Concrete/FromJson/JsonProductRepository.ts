@@ -2,7 +2,7 @@ import { error } from "console";
 import { Product } from "../../../Types/Product";
 import { productFilter } from "../../../Types/ProductFilter";
 import filterByBrands from "./Filters/filterByBrand";
-import filterByRegex from "../../../util/filterByRegex"
+import filterByRegex from "./Filters/filterByRegex"
 import tagsRegexMatch from "./Filters/tagsRegexMatch";
 import { IRepository } from "../../Abstract/IRepository";
 import jsonProducts from '../../LocalData/items.json'
@@ -11,10 +11,6 @@ export class JsonProductRepository implements IRepository<Product>{
 
 
     async getByFilter(filter: productFilter): Promise<Product[]> {
-        //Input coming from search bar: name, category, tags, brand;
-        //Input coming from brand filter:brand
-        //Coming from price range: price range
-       
        const regex = new RegExp(filter.searckey);
        const filteredProducts:any = jsonProducts.filter((p:any) => 
         (tagsRegexMatch(p.tags, filter.searckey ) && filterByBrands(p, filter.brands) && filterByRegex(p.name, filter.searckey)))

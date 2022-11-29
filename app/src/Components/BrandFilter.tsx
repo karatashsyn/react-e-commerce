@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { Company } from '../Types/Company'
-import isIncluding from '../util/isSelected'
+import isIncluding from './../util/isSelected'
 import { JsonCompanyRepository } from '../Repository/Concrete/FromJson/JsonCompanyRepository'
+import { useDispatch } from 'react-redux/es/hooks/useDispatch'
+import { filterActions } from '../store'
 
-export default function BrandFilter() {
+export default function BrandFilter({setFilter}:any) {
 const emptyCompanyArray:Array<Company> = []
 const [selectedCompanies,setSelectedCompanies] = useState(emptyCompanyArray)
 const [allCompanies, setAllCompanies] = useState(emptyCompanyArray)
+
 const [brandFilterOpened, setBrandFilterOpened] = useState(false)
+
 const companyService = new JsonCompanyRepository()
+
+// const dispatch =  useDispatch();
+
+// useEffect(()=>{
+//   dispatch(filterActions.updateBrandFilter(selectedCompanies))
+// }, [selectedCompanies,dispatch] )
 
 const brandsToggleHandler = ()=>{
   setBrandFilterOpened(!brandFilterOpened)
@@ -35,18 +45,18 @@ const chooseBrandHandler = (clickedCompany:Company) =>{
     }
   } 
 
+
+
+
+
   return (
     <>
     <button className='home__brand-filters-opener' onClick={brandsToggleHandler}>{'Brands'}  {brandFilterOpened ? '':'►'}</button>
     <div className={`home__brands-container ${brandFilterOpened ? '' : '--closed'}`}>
         {
             allCompanies.map( (c:Company)=>(<div onClick={()=>chooseBrandHandler(c)} key={c.account}
-            className={
-              
-              
-              
-              'filters-container__brand-box'}>{c.name + `${isIncluding(selectedCompanies,c)? '✔️' : ''}`}</div>))
-          }    
+            className={'filters-container__brand-box'}>{c.name + `${isIncluding(selectedCompanies,c)? '✔️' : ''}`}</div>))
+        }    
     </div>
     </>
   )

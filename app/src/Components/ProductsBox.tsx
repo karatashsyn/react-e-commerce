@@ -3,48 +3,32 @@ import { Product } from '../Types/Product'
 // import { ApiProductRepository } from '../Repository/Concrete/ProductApi/ApiProductRepository'
 import { JsonProductRepository } from '../Repository/Concrete/FromJson/JsonProductRepository'
 import ProductCard from './ProductCard'
+import { useSelector } from 'react-redux/es/exports'
 
 
-export default function ProductsBox() {
+export default function ProductsBox({allProducts}:any, {loading}:any) {
     const ELEM_PER_PAGE = 16
-    const emptyProductArray:Array<Product>= []
-    const productService = new JsonProductRepository()
-    const [allProducts, setAllProducts] = useState(emptyProductArray)
-    const [pageProducts, setPageProducts] = useState(emptyProductArray)
+    const [pageProducts, setPageProducts] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
-    const [loading, setLoading] = useState(false)
+
+
 
     const goPrevPage = () =>{
-        if(currentPage!==1){
-            setCurrentPage(currentPage-1)
-        }
+        if(currentPage!==1){setCurrentPage(currentPage-1)}
     }
-
-    const fetchData = async ()=>{
-        setLoading(true)
-        const res = await productService.getAll()
-        setAllProducts(res)
-        setLoading(false)
-    }
-
-    useEffect(()=>{
-        fetchData()
-    },[])
-
-
-    const goNextPage = () =>{
-        setCurrentPage(currentPage+1)
-    }
-
-
+    
     useEffect(()=>{
         if(allProducts){
             setPageProducts(allProducts.slice((currentPage-1)*ELEM_PER_PAGE, currentPage*ELEM_PER_PAGE))
-        }
-        
+        }     
     },[currentPage,allProducts])
 
-    if(loading){
+    const goNextPage = () =>{setCurrentPage(currentPage+1)}
+
+
+
+    if(loading===true){
+        
         return (
             <div className='home__loading-icon-container'>
                <img alt='loading-icon' className='home__loading-icon' src='https://images.pond5.com/circle-loading-icon-transparent-background-footage-126963108_iconl.jpeg'></img>

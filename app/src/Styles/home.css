@@ -83,6 +83,9 @@ display: flex;
 height: 80px;
 justify-content: space-around;
 }
+.home__lowest-price, .hhome__highest-price{
+    color: black;
+}
 
 .home__lowest-price{
 max-width: 80px;
