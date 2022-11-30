@@ -14,11 +14,6 @@ const [brandFilterOpened, setBrandFilterOpened] = useState(false)
 
 const companyService = new JsonCompanyRepository()
 
-// const dispatch =  useDispatch();
-
-// useEffect(()=>{
-//   dispatch(filterActions.updateBrandFilter(selectedCompanies))
-// }, [selectedCompanies,dispatch] )
 
 const brandsToggleHandler = ()=>{
   setBrandFilterOpened(!brandFilterOpened)

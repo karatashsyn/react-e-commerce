@@ -11,7 +11,7 @@ export default function ProductsBox({allProducts}:any, {loading}:any) {
     const [pageProducts, setPageProducts] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
 
-
+    
 
     const goPrevPage = () =>{
         if(currentPage!==1){setCurrentPage(currentPage-1)}

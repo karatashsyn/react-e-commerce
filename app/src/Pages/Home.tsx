@@ -14,9 +14,19 @@ import { ApiProductRepository } from '../Repository/Concrete/ProductApi/ApiProdu
 
 export default function Home() {
     const emptyProductArray:Array<Product>= []
+    // const filter:productFilter = useSelector((state:any)=>state.filter.filter)
     const productService = new ApiProductRepository()
     const [allProducts, setAllProducts] = useState(emptyProductArray)
     const [loading, setLoading] = useState(false);
+    
+
+    // const getByFilter = async () => {
+    //     setLoading(true)
+    //     const res = await productService.getByFilter(filter)
+    //     setLoading(false)
+    //     setAllProducts(res)
+    // }
+
 
     const fetchData = async ()=>{
         setLoading(true)
@@ -50,7 +60,7 @@ export default function Home() {
             </div>
             <div className="home__right">
                 <div className="home__navbar">
-                    <SearchBar/>
+                    <SearchBar fetchData= {fetchData}/>
                     <div className="home__cart-btn">
                         Go to cart
                         <div className="cart-btn__badge">0</div>
