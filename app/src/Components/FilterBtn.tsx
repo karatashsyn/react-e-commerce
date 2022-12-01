@@ -5,6 +5,7 @@ import { JsonProductRepository } from '../Repository/Concrete/FromJson/JsonProdu
 
 export default function FilterBtn() {
     const productService = new JsonProductRepository()
+    
     // const currentFilter = useSelector((state:any)=> state.filter.filter)
 
     // const applyFilter = () =>{

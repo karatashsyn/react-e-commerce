@@ -1,6 +1,6 @@
 const tagsRegexMatch = (tags:string[], regexAsString:string)=>{
-    const regex = new RegExp(regexAsString)
     
+    const regex = new RegExp(regexAsString.toLowerCase())
     let result:boolean = false;
 
     if(regexAsString.length===0){
@@ -8,9 +8,8 @@ const tagsRegexMatch = (tags:string[], regexAsString:string)=>{
     }
     
     else{
-
         tags.forEach(tag => {
-            if(regex.test(tag)){
+            if(regex.test(tag.toLowerCase())){
                 result = true
             }
         });

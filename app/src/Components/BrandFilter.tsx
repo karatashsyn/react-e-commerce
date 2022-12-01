@@ -4,6 +4,7 @@ import isIncluding from './../util/isSelected'
 import { JsonCompanyRepository } from '../Repository/Concrete/FromJson/JsonCompanyRepository'
 import { useDispatch } from 'react-redux/es/hooks/useDispatch'
 import { filterActions } from '../store'
+import { useSelector } from 'react-redux'
 
 export default function BrandFilter({setFilter}:any) {
 const emptyCompanyArray:Array<Company> = []
@@ -13,14 +14,14 @@ const [allCompanies, setAllCompanies] = useState(emptyCompanyArray)
 const [brandFilterOpened, setBrandFilterOpened] = useState(false)
 
 const companyService = new JsonCompanyRepository()
-
+const filter = useSelector((state:any)=>state.filter)
 
 const brandsToggleHandler = ()=>{
   setBrandFilterOpened(!brandFilterOpened)
 }
 
 const fetchCompanies = async()=>{
-  const allCompanies = await companyService.getAll()
+  const allCompanies = await companyService.getAll(filter)
   setAllCompanies(allCompanies
     )
 }

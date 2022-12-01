@@ -11,19 +11,15 @@ export default function ProductsBox({allProducts}:any, {loading}:any) {
     const [pageProducts, setPageProducts] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
 
-    
+    const goPrevPage = () =>{if(currentPage!==1){setCurrentPage(currentPage-1)}}
+    const goNextPage = () =>{setCurrentPage(currentPage+1)}
 
-    const goPrevPage = () =>{
-        if(currentPage!==1){setCurrentPage(currentPage-1)}
-    }
-    
     useEffect(()=>{
         if(allProducts){
             setPageProducts(allProducts.slice((currentPage-1)*ELEM_PER_PAGE, currentPage*ELEM_PER_PAGE))
         }     
     },[currentPage,allProducts])
 
-    const goNextPage = () =>{setCurrentPage(currentPage+1)}
 
 
 

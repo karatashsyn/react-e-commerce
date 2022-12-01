@@ -1,9 +1,7 @@
 import { configureStore,createSlice } from "@reduxjs/toolkit";
-import { notInitialized } from "react-redux/es/utils/useSyncExternalStore";
-import { updateHeritageClause } from "typescript";
 import { productFilter } from "../Types/ProductFilter";
 
-const initialState:productFilter = {searckey:"", brands:[],category:"",tags:[],priceRange:[]}
+const initialState:productFilter = {searckey:"", brands:[],category:"",tags:[],priceRange:[0,0]}
 
  const filterSlice = createSlice({name:'filter', initialState, reducers:{
     updateBrandFilter(state,action){

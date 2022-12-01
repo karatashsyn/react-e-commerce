@@ -14,42 +14,25 @@ import { ApiProductRepository } from '../Repository/Concrete/ProductApi/ApiProdu
 
 export default function Home() {
     const emptyProductArray:Array<Product>= []
-    const filter:productFilter = useSelector((state:any)=>state.filter.filter)
-    const productService = new ApiProductRepository()
+    const filter:productFilter = useSelector((state:any)=>state.filter)
+    const productService = new JsonProductRepository()
     const [allProducts, setAllProducts] = useState(emptyProductArray)
     const [loading, setLoading] = useState(false);
-    
-
-    const getByFilter = async () => {
-        setLoading(true)
-        console.log("gt by filter runned");
-        
-        const res = await productService.getByFilter(filter)
-        console.log("await i astik");
-        console.log(allProducts);
-        
-        setLoading(false)
-        setAllProducts(res)
-    }
-
-
-    const fetchData = async ()=>{
-        setLoading(true)
-        console.log("state: " + loading);
-        const res = await productService.getAll()
-        console.log(res);
-        setLoading(false)
-        setAllProducts(res)
-        console.log("state: " + loading);
-
-    }
 
     useEffect(()=>{
-        fetchData()
+        console.log(filter);
+        
+        searchProducts()
     },[])
-
-
-
+    
+  
+    
+    const searchProducts = async () => {
+        setLoading(true)
+        const res = await productService.getAll(filter)
+        setLoading(false)
+        setAllProducts(res)
+    }
 
 
   return (
@@ -65,7 +48,7 @@ export default function Home() {
             </div>
             <div className="home__right">
                 <div className="home__navbar">
-                    <SearchBar getByFilter= {getByFilter}/>
+                    <SearchBar searchProducts= {searchProducts}/>
                     <div className="home__cart-btn">
                         Go to cart
                         <div className="cart-btn__badge">0</div>

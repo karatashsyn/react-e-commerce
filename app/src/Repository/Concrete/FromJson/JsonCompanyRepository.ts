@@ -1,4 +1,5 @@
 import { Company } from "../../../Types/Company";
+import { productFilter } from "../../../Types/ProductFilter";
 import { IRepository } from "../../Abstract/IRepository";
 import jsonCompanies from '../../LocalData/companies.json'
 export class JsonCompanyRepository implements IRepository<Company>{
@@ -17,7 +18,7 @@ export class JsonCompanyRepository implements IRepository<Company>{
             slug: '',
         }
     }
-    async getAll():Promise<Company[]> {
+    async getAll(filter:productFilter):Promise<Company[]> {
             const allCompanies:Company[] = jsonCompanies.map((c)=>{ return { 
                 name:c.name,
                 state:c.state,

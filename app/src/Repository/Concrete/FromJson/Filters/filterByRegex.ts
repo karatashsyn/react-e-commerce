@@ -1,11 +1,11 @@
 const filterByRegex = (word:string, stringRegex:string)=>{
     
-    const regex = new RegExp(stringRegex);
+    const regex = new RegExp(stringRegex.toLowerCase());
     if (stringRegex.length===0){
         return true
     }
 
-    else if(regex.test(word)){
+    else if(regex.test(word.toLowerCase())){
         return true
     }
     else{

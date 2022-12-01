@@ -6,17 +6,18 @@ import filterByRegex from "./Filters/filterByRegex"
 import tagsRegexMatch from "./Filters/tagsRegexMatch";
 import { IRepository } from "../../Abstract/IRepository";
 import jsonProducts from '../../LocalData/items.json'
+import filterByPrice from "./Filters/filterByPrice";
 
 export class JsonProductRepository implements IRepository<Product>{
 
 
     async getByFilter(filter: productFilter): Promise<Product[]> {
-        console.log("laa");
-        
-        const allProducts = await this.getAll();
+        const allProducts = await this.getAll(filter)
+    //     // tagsRegexMatch(p.tags, filter.searckey ) && filterByBrands(p, filter.brands) &&
     //    const filteredProducts:any = allProducts.filter((p:any) => 
-    //     (tagsRegexMatch(p.tags, filter.searckey ) && filterByBrands(p, filter.brands) && filterByRegex(p.name, filter.searckey)) 
+    //     (filterByRegex(p.name, filter.searckey)) 
     //     )
+    //    console.log("filteredss");
        
     //     console.log(filteredProducts);
         
@@ -43,7 +44,7 @@ export class JsonProductRepository implements IRepository<Product>{
     }
 
 
-    async getAll(): Promise<Product[]> {
+    async getAll(filter:productFilter): Promise<Product[]> {
              const allProducts:Array<Product> = jsonProducts.map((p)=>{ return { 
                 name:p.name,
                 description:p.description,
@@ -55,7 +56,9 @@ export class JsonProductRepository implements IRepository<Product>{
                 slug:p.slug,
             }}
             )
-            return allProducts
+            const filteredProducts:Product[] = allProducts.filter(p => {return (( filterByBrands(p,filter.brands) &&  filterByPrice(p.price, filter.priceRange)) && (tagsRegexMatch(p.tags, filter.searckey) || filterByRegex(p.name, filter.searckey)))}) 
+            
+            return filteredProducts
     }
 
 }

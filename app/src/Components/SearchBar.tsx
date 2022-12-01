@@ -6,8 +6,8 @@ import { filterActions } from '../store'
 export default function SearchBar({searchProducts}:any) {
     const dispatch = useDispatch();
     const [searchKey, setSearchKey] = useState('')
+
     
-  
     useEffect(()=>{
       dispatch(filterActions.updateSearchKeyFilter(searchKey))
     },[searchKey,dispatch])
@@ -16,7 +16,7 @@ export default function SearchBar({searchProducts}:any) {
   return (
 
     <div className='home__search-bar-box'>
-        <input className='home__search-input' type="text" onChange={(e)=>setSearchKey(e.target.value)} onSubmit={searchProducts} onClick={searchProducts}/>
+        <input className='home__search-input' type="text" onChange={(e)=>setSearchKey(e.target.value)}  onClick={searchProducts}/>
     </div>
 
 

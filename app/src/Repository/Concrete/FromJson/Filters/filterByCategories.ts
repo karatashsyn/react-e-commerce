@@ -4,6 +4,8 @@ const filterByCategories = (p:Product,categories:Array<string>) =>{
     let result:boolean = false;
 
     if(categories.length===0){
+        console.log("yeah category is 0");
+        
         result = true;
     }
 
