@@ -9,5 +9,13 @@
     "inversify": "^6.0.1",
     "react-redux": "^8.0.5",
     "redux": "^4.2.0"
-  }
+  },
+  "name": "package.json",
+  "version": "latest",
+  "description": "yeay",
+  "main": "index.js",
+  "repository": "https://github.com/karatashsyn/react-e-commerce-app.git",
+  "author": "Hüseyin Karataş <karatashuseyin2016@hotmail.com>",
+  "license": "MIT",
+  "private": false
 }

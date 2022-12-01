@@ -11,10 +11,16 @@ export class JsonProductRepository implements IRepository<Product>{
 
 
     async getByFilter(filter: productFilter): Promise<Product[]> {
-       const regex = new RegExp(filter.searckey);
-       const filteredProducts:any = jsonProducts.filter((p:any) => 
-        (tagsRegexMatch(p.tags, filter.searckey ) && filterByBrands(p, filter.brands) && filterByRegex(p.name, filter.searckey)))
-        return filteredProducts;
+        console.log("laa");
+        
+        const allProducts = await this.getAll();
+    //    const filteredProducts:any = allProducts.filter((p:any) => 
+    //     (tagsRegexMatch(p.tags, filter.searckey ) && filterByBrands(p, filter.brands) && filterByRegex(p.name, filter.searckey)) 
+    //     )
+       
+    //     console.log(filteredProducts);
+        
+        return allProducts;
     }
 
     async get(addedNum: string): Promise<Product> {
