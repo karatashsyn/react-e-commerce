@@ -5,7 +5,7 @@ export default function ProductCard(product:Product) {
   return (
 
     
-        <div key={product.name} className='products-container__product-card'>
+        <div key={product.description} className='products-container__product-card'>
             <div className='product-card__imgBox' style={{backgroundImage:`url(${product.image})`}}></div>
             <div className="product-card__info-container">
             <span className='product-card__brand'>{`${product.brand} `}</span>

@@ -152,6 +152,25 @@ background-color: black;
     backdrop-filter: blur(20px);
 }
 
+.home__search-form{
+    width: 70%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+}
+
+
+.home__search-bar-box{
+    /* width: 70%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 16px; */
+}
+
 .home__search-input{
     width: 90%;
     border: none;
@@ -160,14 +179,6 @@ background-color: black;
     color: black;
 }
 
-.home__search-bar-box{
-    width: 70%;
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    border-radius: 16px;
-}
 
 .home__cart-btn{
     width: 140px;

@@ -43,7 +43,7 @@ export default function Home() {
                 <div className="home__filters-container">
                     <PriceFilter />
                     <BrandFilter />
-                    <FilterBtn/>
+                    <FilterBtn applyFilter = {searchProducts}/>
                 </div>
             </div>
             <div className="home__right">
