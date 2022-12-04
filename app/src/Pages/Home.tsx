@@ -15,7 +15,7 @@ import { ApiProductRepository } from '../Repository/Concrete/ProductApi/ApiProdu
 export default function Home() {
     const emptyProductArray:Array<Product>= []
     const filter:productFilter = useSelector((state:any)=>state.filter)
-    const productService = new JsonProductRepository()
+    const productService = new ApiProductRepository()
     const [allProducts, setAllProducts] = useState(emptyProductArray)
     const [loading, setLoading] = useState(false);
 

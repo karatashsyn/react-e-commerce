@@ -14,7 +14,9 @@ export default function FilterBtn({applyFilter}:any) {
 
   return (
     <>
+    <div className='apply-filter-btn-container'>
     <button className='home__apply-filter-btn' onClick={applyFilter}>Apply Filter</button>
+    </div>
     </>
     
   )

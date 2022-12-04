@@ -11,20 +11,21 @@ const emptyCompanyArray:Array<Company> = []
 const [selectedCompanies,setSelectedCompanies] = useState(emptyCompanyArray)
 const [allCompanies, setAllCompanies] = useState(emptyCompanyArray)
 
-const [brandFilterOpened, setBrandFilterOpened] = useState(false)
 
 const companyService = new JsonCompanyRepository()
 const filter = useSelector((state:any)=>state.filter)
-
-const brandsToggleHandler = ()=>{
-  setBrandFilterOpened(!brandFilterOpened)
-}
+const dispatch = useDispatch()
 
 const fetchCompanies = async()=>{
   const allCompanies = await companyService.getAll(filter)
   setAllCompanies(allCompanies
     )
 }
+
+useEffect(()=>{
+dispatch(filterActions.updateBrandFilter(selectedCompanies))
+}, [selectedCompanies])
+
 
 useEffect(()=>{
   fetchCompanies()
@@ -47,11 +48,11 @@ const chooseBrandHandler = (clickedCompany:Company) =>{
 
   return (
     <>
-    <button className='home__brand-filters-opener' onClick={brandsToggleHandler}>{'Brands'}  {brandFilterOpened ? '':'►'}</button>
-    <div className={`home__brands-container ${brandFilterOpened ? '' : '--closed'}`}>
+    <p className='home__brand-filters-opener'>Brands</p>
+    <div className='home__brands-container'>
         {
             allCompanies.map( (c:Company)=>(<div onClick={()=>chooseBrandHandler(c)} key={c.account}
-            className={'filters-container__brand-box'}>{c.name + `${isIncluding(selectedCompanies,c)? '✔️' : ''}`}</div>))
+            className={`filters-container__brand-box ${isIncluding(selectedCompanies,c)? '--selected' : ''} `}>{c.name}</div>))
         }    
     </div>
     </>

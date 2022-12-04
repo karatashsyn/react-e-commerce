@@ -46,8 +46,30 @@ export default function ProductsBox({allProducts}:any, {loading}:any) {
               
                 <div className="products-part__pagination-buttons-container">
                     <span>Page: {currentPage}</span>
-                    <button className={`products-part__prev-page ${currentPage===1? '--disabled': ''}`} onClick={goPrevPage}>◄</button>
-                    <button className='products-part__next-page' onClick={goNextPage}>►</button>
+                    <button className={`products-part__prev-page ${currentPage===1? '--disabled': ''}`} onClick={goPrevPage}>
+
+                    <svg width="12" height="19" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="9.11182" width="13" height="3" rx="1.5" transform="rotate(-44.5 0 9.11182)" fill="black"/>
+<rect y="9.11182" width="13" height="3" rx="1.5" transform="rotate(-44.5 0 9.11182)" fill="black"/>
+<rect y="9.11182" width="13" height="3" rx="1.5" transform="rotate(-44.5 0 9.11182)" fill="black"/>
+<rect x="2.10272" y="7" width="13" height="3" rx="1.5" transform="rotate(44.5 2.10272 7)" fill="black"/>
+<rect x="2.10272" y="7" width="13" height="3" rx="1.5" transform="rotate(44.5 2.10272 7)" fill="black"/>
+<rect x="2.10272" y="7" width="13" height="3" rx="1.5" transform="rotate(44.5 2.10272 7)" fill="black"/>
+</svg>
+
+
+                    </button>
+                    <button className='products-part__next-page' onClick={goNextPage}>
+                    <svg width="12" height="19" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="12.9971" height="2.99935" rx="1.49968" transform="matrix(-0.713097 -0.701066 -0.700753 0.713404 11.37 9.11182)" fill="black"/>
+<rect width="12.9971" height="2.99935" rx="1.49968" transform="matrix(-0.713097 -0.701066 -0.700753 0.713404 11.37 9.11182)" fill="black"/>
+<rect width="12.9971" height="2.99935" rx="1.49968" transform="matrix(-0.713097 -0.701066 -0.700753 0.713404 11.37 9.11182)" fill="black"/>
+<rect width="12.9971" height="2.99935" rx="1.49968" transform="matrix(-0.713097 0.701066 0.700753 0.713404 9.26817 7)" fill="black"/>
+<rect width="12.9971" height="2.99935" rx="1.49968" transform="matrix(-0.713097 0.701066 0.700753 0.713404 9.26817 7)" fill="black"/>
+<rect width="12.9971" height="2.99935" rx="1.49968" transform="matrix(-0.713097 0.701066 0.700753 0.713404 9.26817 7)" fill="black"/>
+</svg>
+
+                    </button>
                 </div>
         
             </div>

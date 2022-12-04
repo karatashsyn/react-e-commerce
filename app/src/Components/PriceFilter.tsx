@@ -12,7 +12,7 @@ export default function PriceFilter({setFilter}:any) {
 
 
   return (<>
-      <p>Price Range</p>
+      <p className='home__price-filter-title'>Price Range</p>
       <div className='home__price-inputs-container'>
     <input type={'number'} className='home__lowest-price' onChange={(e)=>{
       e.preventDefault();
@@ -21,7 +21,6 @@ export default function PriceFilter({setFilter}:any) {
       
    
     }} ></input>
-    <span>-</span>
     <input type={'number'} className='home__highest-price'  onChange={(e)=>{
       e.preventDefault();
       console.log(e.target.value);
