@@ -13,11 +13,13 @@ import FilterBtn from "../Components/FilterBtn"
 import { ApiProductRepository } from "../Repository/Concrete/ProductApi/ApiProductRepository"
 
 export default function Home() {
+
   const emptyProductArray: Array<Product> = []
   const filter: productFilter = useSelector((state: any) => state.filter)
   const productService = new JsonProductRepository()
   const [allProducts, setAllProducts] = useState(emptyProductArray)
   const [loading, setLoading] = useState(false)
+
 
   useEffect(() => {
     console.log(filter)

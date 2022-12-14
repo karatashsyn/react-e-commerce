@@ -2,6 +2,7 @@ import { Product } from "../Types/Product"
 
 export default function ProductCard(product: Product) {
   return (
+
     <div key={product.description} className='products-container__product-card'>
       <div
         className='product-card__imgBox'
@@ -32,6 +33,7 @@ export default function ProductCard(product: Product) {
             />
           </svg>
         </button>
+
       </div>
     </div>
   )

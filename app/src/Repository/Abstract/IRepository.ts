@@ -3,3 +3,4 @@ export interface IRepository<T> {
   getAll(): Promise<Array<T>>
   getByFilter(filter: object): Promise<Array<T>>
 }
+

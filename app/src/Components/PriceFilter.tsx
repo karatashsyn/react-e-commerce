@@ -10,6 +10,7 @@ export default function PriceFilter({ setFilter }: any) {
     dispatch(filterActions.updatePriceRange(range))
   }, [range, dispatch])
 
+
   return (
     <>
       <p className='home__price-filter-title'>Price Range</p>
@@ -36,5 +37,6 @@ export default function PriceFilter({ setFilter }: any) {
         ></input>
       </div>
     </>
+
   )
 }

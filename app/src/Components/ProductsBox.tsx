@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { Product } from "../Types/Product"
-// import { ApiProductRepository } from '../Repository/Concrete/ProductApi/ApiProductRepository'
-import { JsonProductRepository } from "../Repository/Concrete/FromJson/JsonProductRepository"
 import ProductCard from "./ProductCard"
-import { useSelector } from "react-redux/es/exports"
+import LeftArrow from "../assets/leftArrow"
+import RightArrow from "../assets/rightArrow"
 
 export default function ProductsBox({ allProducts }: any, { loading }: any) {
   const ELEM_PER_PAGE = 16
@@ -16,8 +14,12 @@ export default function ProductsBox({ allProducts }: any, { loading }: any) {
     }
   }
   const goNextPage = () => {
-    setCurrentPage(currentPage + 1)
+    if(allProducts[currentPage*ELEM_PER_PAGE]){
+      setCurrentPage(currentPage + 1)
+    }
+    
   }
+
 
   useEffect(() => {
     if (allProducts) {
@@ -50,124 +52,17 @@ export default function ProductsBox({ allProducts }: any, { loading }: any) {
         </div>
 
         <div className='products-part__pagination-buttons-container'>
-          <span>Page: {currentPage}</span>
+          <span className="products-part__page-number">Page: {currentPage}</span>
           <button
             className={`products-part__prev-page ${
               currentPage === 1 ? "--disabled" : ""
             }`}
             onClick={goPrevPage}
           >
-            <svg
-              width='12'
-              height='19'
-              viewBox='0 0 12 19'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <rect
-                y='9.11182'
-                width='13'
-                height='3'
-                rx='1.5'
-                transform='rotate(-44.5 0 9.11182)'
-                fill='black'
-              />
-              <rect
-                y='9.11182'
-                width='13'
-                height='3'
-                rx='1.5'
-                transform='rotate(-44.5 0 9.11182)'
-                fill='black'
-              />
-              <rect
-                y='9.11182'
-                width='13'
-                height='3'
-                rx='1.5'
-                transform='rotate(-44.5 0 9.11182)'
-                fill='black'
-              />
-              <rect
-                x='2.10272'
-                y='7'
-                width='13'
-                height='3'
-                rx='1.5'
-                transform='rotate(44.5 2.10272 7)'
-                fill='black'
-              />
-              <rect
-                x='2.10272'
-                y='7'
-                width='13'
-                height='3'
-                rx='1.5'
-                transform='rotate(44.5 2.10272 7)'
-                fill='black'
-              />
-              <rect
-                x='2.10272'
-                y='7'
-                width='13'
-                height='3'
-                rx='1.5'
-                transform='rotate(44.5 2.10272 7)'
-                fill='black'
-              />
-            </svg>
+            <LeftArrow/>
           </button>
           <button className='products-part__next-page' onClick={goNextPage}>
-            <svg
-              width='12'
-              height='19'
-              viewBox='0 0 12 19'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <rect
-                width='12.9971'
-                height='2.99935'
-                rx='1.49968'
-                transform='matrix(-0.713097 -0.701066 -0.700753 0.713404 11.37 9.11182)'
-                fill='black'
-              />
-              <rect
-                width='12.9971'
-                height='2.99935'
-                rx='1.49968'
-                transform='matrix(-0.713097 -0.701066 -0.700753 0.713404 11.37 9.11182)'
-                fill='black'
-              />
-              <rect
-                width='12.9971'
-                height='2.99935'
-                rx='1.49968'
-                transform='matrix(-0.713097 -0.701066 -0.700753 0.713404 11.37 9.11182)'
-                fill='black'
-              />
-              <rect
-                width='12.9971'
-                height='2.99935'
-                rx='1.49968'
-                transform='matrix(-0.713097 0.701066 0.700753 0.713404 9.26817 7)'
-                fill='black'
-              />
-              <rect
-                width='12.9971'
-                height='2.99935'
-                rx='1.49968'
-                transform='matrix(-0.713097 0.701066 0.700753 0.713404 9.26817 7)'
-                fill='black'
-              />
-              <rect
-                width='12.9971'
-                height='2.99935'
-                rx='1.49968'
-                transform='matrix(-0.713097 0.701066 0.700753 0.713404 9.26817 7)'
-                fill='black'
-              />
-            </svg>
+            <RightArrow/>
           </button>
         </div>
       </div>

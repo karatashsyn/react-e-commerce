@@ -5,7 +5,7 @@ const filterByBrands = (p: Product, brands: Company[]) => {
   if (brands.length === 0) {
     return true
   } else if (
-    brands.map((b) => b.name.toLowerCase()).includes(p.brand.toLowerCase())
+    brands.map((b) => b.slug.replaceAll('-', ' ').toLowerCase()).includes(p.brand.toLowerCase())
   ) {
     return true
   } else {
