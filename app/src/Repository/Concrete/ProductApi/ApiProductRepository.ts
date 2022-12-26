@@ -1,4 +1,3 @@
-
 import { Product } from "../../../Types/Product"
 import { IRepository } from "../../Abstract/IRepository"
 import filters from "../../../util/Filters"
@@ -17,7 +16,6 @@ export class ApiProductRepository implements IRepository<Product> {
   //         slug: '',
   //     }
   // }
-
 
   async getAll(): Promise<Product[]> {
     const res = await fetch("https://dummyjson.com/products")
