@@ -10,6 +10,7 @@ function App() {
   const hideCartHandler = () => {
     setCartShown(false)
   }
+
   const cartHandlers = {
     showCartHandler,
     hideCartHandler,

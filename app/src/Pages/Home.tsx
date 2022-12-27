@@ -10,12 +10,14 @@ import { productFilter } from "../Types/ProductFilter"
 import { useSelector } from "react-redux/es/hooks/useSelector"
 import { JsonProductRepository } from "../Repository/Concrete/FromJson/JsonProductRepository"
 import FilterBtn from "../Components/FilterBtn"
+import { ApiProductRepository } from "../Repository/Concrete/ProductApi/ApiProductRepository"
 // import { ApiProductRepository } from "../Repository/Concrete/ProductApi/ApiProductRepository"
 
 export default function Home({ cartHandlers }: any) {
   const emptyProductArray: Array<Product> = []
   const filter: productFilter = useSelector((state: any) => state.filter)
-  const productService = new JsonProductRepository()
+  const cartProducts = useSelector((state: any) => state.cart)
+  const productService = new ApiProductRepository()
   const [allProducts, setAllProducts] = useState(emptyProductArray)
   const [loading, setLoading] = useState(false)
 
@@ -26,8 +28,8 @@ export default function Home({ cartHandlers }: any) {
 
   const searchProducts = async () => {
     setLoading(true)
+    const res = await productService.getAll()
     // const res = await productService.getByFilter(filter)
-    const res = await productService.getByFilter(filter)
     setLoading(false)
     setAllProducts(res)
   }
@@ -51,7 +53,7 @@ export default function Home({ cartHandlers }: any) {
               onClick={cartHandlers.showCartHandler}
             >
               Cart
-              <div className='cart-btn__badge'>0</div>
+              <div className='cart-btn__badge'>{cartProducts.length}</div>
             </div>
           </div>
           <ProductsBox allProducts={allProducts} loading={loading} />

@@ -1,6 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
 import { productFilter } from "../Types/ProductFilter"
 import { CartProductType } from "../Types/CartProduct"
+import { stat } from "fs"
 const initialFilterState: productFilter = {
   searckey: "",
   brands: [],
@@ -108,7 +109,10 @@ const cartSlice = createSlice({
         (cp) => cp.product.name === action.payload.name
       )
       if (cartProduct!.number === 1) {
-        state = state.filter((cp) => cp.product.name !== action.payload.name)
+        const indexOfRemoved = state.findIndex(
+          (cp) => cp.product.name === cartProduct?.product.name
+        )
+        state.splice(indexOfRemoved, 1)
       } else {
         cartProduct!.number--
       }
@@ -116,8 +120,8 @@ const cartSlice = createSlice({
   },
 })
 
-// const cartSlice = createSlice
 export const filterActions = filterSlice.actions
+export const cartActions = cartSlice.actions
 
 const store = configureStore({
   reducer: {

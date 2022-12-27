@@ -1,8 +1,10 @@
+import { useDispatch } from "react-redux"
 import { Product } from "../Types/Product"
+import { cartActions } from "../store"
 
 export default function ProductCard(product: Product) {
+  const dispatch = useDispatch()
   return (
-
     <div key={product.description} className='products-container__product-card'>
       <div
         className='product-card__imgBox'
@@ -14,7 +16,12 @@ export default function ProductCard(product: Product) {
       </div>
       <div className='product-card__btn-container'>
         <span className='product-card__price'>{"$ " + product.price}</span>
-        <button className='product-card__add-to-cart-btn'>
+        <button
+          className='product-card__add-to-cart-btn'
+          onClick={() => {
+            dispatch(cartActions.addToCart(product))
+          }}
+        >
           <svg
             width='14'
             height='14'
@@ -33,7 +40,6 @@ export default function ProductCard(product: Product) {
             />
           </svg>
         </button>
-
       </div>
     </div>
   )
