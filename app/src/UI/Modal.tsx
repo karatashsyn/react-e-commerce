@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import ReactDOM from "react-dom"
 
-const Backdrop = ({ onCloseModal }: any) => {
-  return <div className='modal-backdrop' onClick={onCloseModal}></div>
+const Backdrop = (props: any) => {
+  return <div className='modal-backdrop' onClick={props.onCloseCart}></div>
 }
 
 const ModalOverlay = (props: any) => {
@@ -10,12 +10,12 @@ const ModalOverlay = (props: any) => {
 }
 const portalDestination = document.getElementById("overlays")!
 
-export default function Modal(props: any, { onCloseModal }: any) {
+export default function Modal(props: any) {
   return (
     <>
       {ReactDOM.createPortal(
         <>
-          <Backdrop onCloseModal={onCloseModal} />
+          <Backdrop onCloseCart={props.onCloseCart} />
           <ModalOverlay>{props.children}</ModalOverlay>,
         </>,
         portalDestination

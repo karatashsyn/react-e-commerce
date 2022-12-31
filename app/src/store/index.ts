@@ -9,64 +9,7 @@ const initialFilterState: productFilter = {
   tags: [],
   priceRange: [0, 0],
 }
-const initialCartState: Array<CartProductType> = [
-  {
-    product: {
-      name: "deneme",
-      brand: "deneme",
-      description: "deneme",
-      image:
-        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mgjd3tua-apple-iphone-12-128gb-productred-mgjd3tua-637599569969971796.jpg",
-      price: 20,
-      slug: "",
-      tags: [""],
-      type: "car",
-    },
-    number: 2,
-  },
-  {
-    product: {
-      name: "deneme",
-      brand: "deneme",
-      description: "deneme",
-      image:
-        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mgjd3tua-apple-iphone-12-128gb-productred-mgjd3tua-637599569969971796.jpg",
-      price: 20,
-      slug: "",
-      tags: [""],
-      type: "car",
-    },
-    number: 2,
-  },
-  {
-    product: {
-      name: "deneme",
-      brand: "deneme",
-      description: "deneme",
-      image:
-        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mgjd3tua-apple-iphone-12-128gb-productred-mgjd3tua-637599569969971796.jpg",
-      price: 20,
-      slug: "",
-      tags: [""],
-      type: "car",
-    },
-    number: 2,
-  },
-  {
-    product: {
-      name: "deneme",
-      brand: "deneme",
-      description: "deneme",
-      image:
-        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mgjd3tua-apple-iphone-12-128gb-productred-mgjd3tua-637599569969971796.jpg",
-      price: 20,
-      slug: "",
-      tags: [""],
-      type: "car",
-    },
-    number: 2,
-  },
-]
+const initialCartState: Array<CartProductType> = []
 
 const filterSlice = createSlice({
   name: "filter",

@@ -1,8 +1,8 @@
+import ".././Styles/home.css"
 import React from "react"
 import SearchBar from "../Components/SearchBar"
 import PriceFilter from "../Components/PriceFilter"
 import BrandFilter from "../Components/BrandFilter"
-import ".././Styles/home.css"
 import { useState, useEffect } from "react"
 import { Product } from "../Types/Product"
 import ProductsBox from "./../Components/ProductsBox"
@@ -11,7 +11,6 @@ import { useSelector } from "react-redux/es/hooks/useSelector"
 import { JsonProductRepository } from "../Repository/Concrete/FromJson/JsonProductRepository"
 import FilterBtn from "../Components/FilterBtn"
 import { ApiProductRepository } from "../Repository/Concrete/ProductApi/ApiProductRepository"
-// import { ApiProductRepository } from "../Repository/Concrete/ProductApi/ApiProductRepository"
 
 export default function Home({ cartHandlers }: any) {
   const emptyProductArray: Array<Product> = []

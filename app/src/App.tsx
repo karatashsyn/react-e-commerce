@@ -15,10 +15,9 @@ function App() {
     showCartHandler,
     hideCartHandler,
   }
-
   return (
     <div className='App'>
-      {cartShown ? <Cart /> : <></>}
+      {cartShown ? <Cart onCloseCart={hideCartHandler} /> : <></>}
       <HomePage cartHandlers={cartHandlers} />
     </div>
   )
