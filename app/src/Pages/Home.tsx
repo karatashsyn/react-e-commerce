@@ -11,7 +11,6 @@ import { useSelector } from "react-redux/es/hooks/useSelector"
 import { JsonProductRepository } from "../Repository/Concrete/FromJson/JsonProductRepository"
 import FilterBtn from "../Components/FilterBtn"
 import { ApiProductRepository } from "../Repository/Concrete/ProductApi/ApiProductRepository"
-import heyyyyyy;
 
 export default function Home({ cartHandlers }: any) {
   const emptyProductArray: Array<Product> = []
