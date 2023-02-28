@@ -1,0 +1,108 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.productsContainer {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.productsContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.productsContainer::-webkit-scrollbar-thumb {
+  background-color: var(--gray-background);
+  border: none;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.myCartSpan {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.productsSection {
+  margin-top: 36px;
+}
+
+.products-span,
+.totalSpan {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.productsContainer {
+  margin-top: 16px;
+}
+
+.down {
+  width: 100%;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.down .totalSpan {
+  margin-right: 8px;
+}
+
+.down .dollarSpan {
+  font-size: 36px;
+  margin-right: 4px;
+  font-weight: bold;
+  color: var(--layer-green);
+}
+
+.down .totalInfoSpan {
+  font-size: 42px;
+  color: var(--text-dark);
+  font-weight: bold;
+}
+
+.downActionsContainer {
+  display: flex;
+  gap: 4px;
+}
+.downBtn {
+  height: 42px;
+  width: 108px;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.downActionsContainer .cancel {
+  background-color: var(--bg-overlay);
+  color: var(--white-background);
+}
+.downActionsContainer .cancel:hover {
+  text-decoration: underline;
+}
+.downActionsContainer .confirm {
+  background-color: var(--layer-green);
+  color: var(--text-green);
+  transition: background-color 0.2s;
+}
+.downActionsContainer .confirm:hover {
+  background-color: var(--hovered-layer-green);
+}
+
+.noProductsContainer {
+  text-align: center;
+}
+.noProductsSpan {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--layer-green);
+}

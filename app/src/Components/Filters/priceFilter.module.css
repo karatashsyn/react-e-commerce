@@ -1,0 +1,19 @@
+.priceTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-green);
+}
+.inputsContainer {
+  width: 100%;
+  margin: 24px 0;
+  display: flex;
+  gap: 16px;
+}
+
+.inputsContainer > * {
+  border: 1px solid rgb(184, 184, 184);
+  color: var(--text-dark);
+  height: 30px;
+  border-radius: 4px;
+  width: 50%;
+}

@@ -1,0 +1,89 @@
+.navbar {
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--gray-background);
+  backdrop-filter: blur(20px);
+}
+
+.iconsContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  height: 24px;
+  transition: 100ms;
+}
+
+.iconContainer:hover {
+  transform: translateY(-4px);
+}
+
+.iconContainer:hover .iconSpan {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.cartBtn {
+  background-color: var(--layer-green);
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+  width: 84px;
+  height: 42px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: 36px;
+}
+
+.badge {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  padding: 0 8px;
+  min-width: 24px;
+  text-align: center;
+  height: 24px;
+  background-color: var(--text-green);
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.badge span {
+  line-height: 24px;
+}
+
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+}
+.navIcon {
+  width: 100%;
+  height: auto;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.iconSpan {
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: 0;
+  color: rgb(196, 196, 196);
+  transition: all 0.2s;
+  transform: translateY(4px);
+  text-align: end;
+}

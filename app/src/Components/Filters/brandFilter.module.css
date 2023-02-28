@@ -1,0 +1,47 @@
+.brandsTitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-green);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.brandsContainer {
+  overflow: hidden;
+  max-height: 400px;
+  word-wrap: normal;
+  overflow-y: scroll;
+}
+
+.brandsContainer.--closed {
+  padding: 0;
+  max-height: 0;
+}
+
+.brandsContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.brandsContainer::-webkit-scrollbar-track {
+  background: var(--gray-background);
+}
+
+.brandsContainer::-webkit-scrollbar-thumb {
+  background-color: var(--layer-green);
+  border: none;
+  border-radius: 8px;
+}
+
+.brandBox {
+  margin: 4px 12px;
+  max-width: max-content;
+  cursor: pointer;
+  border: 2px solid rgb(219, 219, 219);
+  padding: 2px 8px;
+  border-radius: 16px;
+  font-weight: 340;
+}
+.selected {
+  background-color: rgb(160, 160, 160);
+  color: black;
+}

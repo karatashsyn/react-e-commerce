@@ -1,0 +1,21 @@
+.backDrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  background: rgb(0, 0, 0);
+  z-index: 2;
+}
+.overlay {
+  padding: 36px;
+  position: fixed;
+  width: clamp(400px, 50vw, 720px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background-color: var(--white-background);
+  border-radius: 8px;
+}

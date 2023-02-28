@@ -1,0 +1,46 @@
+.filtersContainer {
+  padding: 16px 16px;
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  left: 20px;
+  min-width: 320px;
+}
+
+.splitter {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white-background);
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+
+.filtersTitle {
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  width: 100%;
+  background-color: var(--transparent-background);
+  color: white;
+  font-weight: 600;
+}
+
+.right {
+  background-color: var(--white-background);
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.productsPart {
+  position: relative;
+}

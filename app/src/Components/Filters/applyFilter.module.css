@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.applyBtn {
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  margin-top: 20px;
+  background-color: var(--layer-green);
+  color: var(--text-white);
+  font-weight: 500;
+}
