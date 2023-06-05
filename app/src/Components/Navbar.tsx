@@ -1,7 +1,8 @@
 import React from "react"
 import SearchBar from "./SearchBar"
 import styles from "./navbar.module.css"
-export default function Navbar({ cartProducts, cartHandlers }: any) {
+import { forwardRef } from "react"
+const Navbar = forwardRef(({ cartProducts, cartHandlers }: any, ref: any) => {
   return (
     <div className={styles.navbar}>
       <SearchBar />
@@ -44,4 +45,6 @@ export default function Navbar({ cartProducts, cartHandlers }: any) {
       </div>
     </div>
   )
-}
+})
+
+export default Navbar

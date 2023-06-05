@@ -4,10 +4,14 @@
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-between;
-  column-gap: 6px;
+  column-gap: 12px;
   row-gap: 12px;
   padding: 0 32px;
+  padding-top: 4rem;
   align-items: start;
+}
+.productsContainer > * {
+  width: 100%;
 }
 
 .fixedFrame::-webkit-scrollbar {
@@ -31,5 +35,19 @@
 @media screen and (max-width: 1200px) {
   .productsContainer {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 920px) {
+  .productsContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 560px) {
+  .resultsInfo {
+    padding: 0 1rem;
+  }
+  .productsContainer {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
   }
 }

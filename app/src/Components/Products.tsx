@@ -41,8 +41,8 @@ export default function ProductsBox() {
             {products.map((p: Product, index: number) => {
               if (products.length === index + 1) {
                 return (
-                  <div ref={lastProduct}>
-                    <ProductCard key={p.id} product={p} />
+                  <div key={p.id} ref={lastProduct}>
+                    <ProductCard product={p} />
                   </div>
                 )
               } else {

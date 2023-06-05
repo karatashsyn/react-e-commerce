@@ -17,7 +17,7 @@ button {
 :root {
   --layer-green: rgb(24, 214, 132);
   --hovered-layer-green: #47f095;
-  --white-background: hsl(0, 0%, 96%);
+  --white-background: hsl(0, 0%, 98%);
   --transparent-background: rgba(33, 33, 33);
   --card-background: hsl(220, 12%, 100%);
   --gray-background: rgb(59, 59, 59);
