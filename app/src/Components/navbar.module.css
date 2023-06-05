@@ -1,5 +1,5 @@
 .navbar {
-  padding: 14px 32px;
+  padding: 14px 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,20 +31,51 @@
 }
 
 .cartBtn {
+  position: relative;
   background-color: var(--layer-green);
-  color: white;
-  font-weight: 500;
-  font-size: 24px;
   width: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   height: 42px;
   border-radius: 4px;
   cursor: pointer;
-  position: relative;
-  padding-right: 10px;
-  margin-left: auto;
+  padding: 1rem 4rem;
   margin-right: 36px;
+  background-color: white;
+  border: none;
+  transition: 0.2s;
+}
+.cartBtn:hover {
+}
+/* .cartBtn .drop {
+  position: absolute;
+  left: -116%;
+  bottom: -220%;
+  width: 120%;
+  height: 300%;
+  border-radius: 50%;
+  background-color: var(--light-purple);
+  transition: 0.2s;
+} */
+/* .cartBtn:hover .drop {
+  left: -10%;
+  bottom: -80%;
+} */
+.cartBtn span {
+  font-weight: 600;
+  font-size: 24px;
+  color: black;
 }
 
+.cartBtn > * {
+  transition: all 0.2s;
+}
+
+.buttonsContainer {
+  display: flex;
+}
 .badge {
   position: absolute;
   right: -8px;
@@ -53,17 +84,19 @@
   min-width: 24px;
   text-align: center;
   height: 24px;
-  background-color: var(--text-green);
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--light-purple);
   border-radius: 12px;
   text-align: center;
   font-weight: 600;
   font-size: 16px;
   line-height: 100%;
+  overflow: visible;
 }
 
 .badge span {
   line-height: 24px;
+  color: white;
+  font-size: 1rem;
 }
 
 .iconWrapper {

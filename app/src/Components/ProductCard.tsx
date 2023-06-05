@@ -1,47 +1,45 @@
 import { useDispatch } from "react-redux"
 import { cartActions } from "../store"
+
 import styles from "./productCard.module.css"
-export default function ProductCard({ product }: any) {
+import { Product } from "../Types/Product"
+import Rating from "./UI/Rating"
+import Arrow from "./UI/Arrow"
+type Props = {
+  product: Product
+}
+export default function ProductCard({ product }: Props) {
   const dispatch = useDispatch()
   return (
     <div className={styles.productCard}>
-      <div
-        className={styles.imgBox}
-        style={{ backgroundImage: `url(${product.image})` }}
-      ></div>
-      <div className={styles.infoContainer}>
-        <p className={styles.productName}>{product.name}</p>
-        <span
-          role={"link"}
-          className={styles.brand}
-        >{`${product.brand} `}</span>
+      <div className={styles.imgBox}>
+        <img src={product.image} alt='Product' />
       </div>
-      <div className={styles.btnContainer}>
-        <span className={styles.price}>{"$ " + product.price}</span>
-        <button
+      <div className={styles.infoContainer}>
+        <div className={styles.productNameContainer}>
+          <p className={styles.productName}>{product.name}</p>
+        </div>
+        <div className={styles.brandContainer}>
+          <span
+            role={"link"}
+            className={styles.brand}
+          >{`${product.brand} `}</span>
+        </div>
+        <div className={styles.descriptionContainer}>
+          <p> {product.description}</p>
+        </div>
+        <div className={styles.priceContainer}>
+          <h1 className={styles.price}>{`$${product.price}`}</h1>
+          <Rating rate={product.rating} />
+        </div>
+        <div
+          onClick={() => dispatch(cartActions.addToCart(product))}
           className={styles.addBtn}
-          onClick={() => {
-            dispatch(cartActions.addToCart(product))
-          }}
         >
-          <svg
-            width='14'
-            height='14'
-            viewBox='0 0 14 14'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <rect x='5.6' width='2.8' height='14' rx='1.4' fill='white' />
-            <rect
-              y='8.4'
-              width='2.8'
-              height='14'
-              rx='1.4'
-              transform='rotate(-90 0 8.4)'
-              fill='white'
-            />
-          </svg>
-        </button>
+          <span>Add To Cart</span>
+          <div></div>
+          <Arrow />
+        </div>
       </div>
     </div>
   )

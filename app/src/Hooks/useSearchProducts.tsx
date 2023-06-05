@@ -19,7 +19,7 @@ export default function useSearchProducts(
 
   useEffect(() => {
     setPageNumber(1)
-  }, [filter, setPageNumber])
+  }, [setPageNumber, filter])
 
   useEffect(() => {
     try {
@@ -29,6 +29,7 @@ export default function useSearchProducts(
         const freshProducts =
           pageNumber === 1 ? res.products : [...products, ...res.products]
         setProducts(freshProducts)
+
         setLoading(false)
 
         if (res.total > freshProducts.length) setHasMore(true)
@@ -38,7 +39,7 @@ export default function useSearchProducts(
       setError(true)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter, pageNumber])
+  }, [pageNumber, filter])
 
   return { loading, error, products, hasMore }
 }

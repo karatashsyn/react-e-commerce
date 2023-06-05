@@ -6,14 +6,10 @@ export default function SearchBar() {
   const dispatch = useDispatch()
   const [searchKey, setSearchKey] = useState("")
 
-  const search = () => {
-    dispatch(filterActions.updateSearchKeyFilter(searchKey))
-  }
-
   const handleSearching = () => {
     return (e: React.FormEvent) => {
       e.preventDefault()
-      search()
+      dispatch(filterActions.updateSearchKeyFilter(searchKey))
     }
   }
 

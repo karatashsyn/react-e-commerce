@@ -10,12 +10,6 @@ export default function Home({ cartHandlers }: any) {
   return (
     <>
       <div className={styles.splitter}>
-        <div className={styles.left}>
-          <div className={styles.filtersTitle}>Filters</div>
-          <div className={styles.filtersContainer}>
-            <Filters />
-          </div>
-        </div>
         <div className={styles.right}>
           <Navbar cartProducts={cartProducts} cartHandlers={cartHandlers} />
           <div className={styles.productsPart}>

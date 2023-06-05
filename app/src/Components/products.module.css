@@ -4,7 +4,8 @@
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-between;
-  column-gap: 12px;
+  column-gap: 6px;
+  row-gap: 12px;
   padding: 0 32px;
   align-items: start;
 }
@@ -22,8 +23,8 @@
   border-radius: 8px;
 }
 .resultsInfo {
-  padding: 0 32px;
-  margin-top: 16px;
+  padding: 0 52px;
+  margin: 16px 0px;
   color: rgb(152, 152, 152);
 }
 
