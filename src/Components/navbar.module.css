@@ -41,11 +41,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 1rem;
   height: 42px;
   border-radius: 0.24rem;
   cursor: pointer;
-  padding: 0rem 4rem;
+  padding: 0rem 3.6rem;
   margin-right: 36px;
   background-color: rgb(52, 52, 52);
   transition: 0.2s;

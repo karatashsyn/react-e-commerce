@@ -1,6 +1,6 @@
 .productCard {
   box-shadow: 1px 8px 12px 1px hsl(0, 0%, 93%);
-  /* width: 340px; */
+  width: 100%;
   border-radius: 8px;
   border: 2px solid rgb(236, 236, 236);
   transition: all 240ms;
