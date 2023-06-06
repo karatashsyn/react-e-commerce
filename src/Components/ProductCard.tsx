@@ -1,19 +1,16 @@
-import { useDispatch } from "react-redux"
-import { cartActions } from "../store"
-
 import styles from "./productCard.module.css"
 import { Product } from "../Types/Product"
 import Rating from "./UI/Rating"
 import Arrow from "./UI/Arrow"
 type Props = {
   product: Product
+  addToCart: Function
 }
-export default function ProductCard({ product }: Props) {
-  const dispatch = useDispatch()
+export default function ProductCard({ product, addToCart }: Props) {
   return (
     <div className={styles.productCard}>
       <div className={styles.imgBox}>
-        <img src={product.image} alt='Product' />
+        <img src={product.image} loading='lazy' alt='Product' />
       </div>
       <div className={styles.infoContainer}>
         <div className={styles.productNameContainer}>
@@ -32,10 +29,7 @@ export default function ProductCard({ product }: Props) {
           <h1 className={styles.price}>{`$${product.price}`}</h1>
           <Rating rate={product.rating} />
         </div>
-        <div
-          onClick={() => dispatch(cartActions.addToCart(product))}
-          className={styles.addBtn}
-        >
+        <div onClick={() => addToCart(product)} className={styles.addBtn}>
           <span>Add To Cart</span>
           <div></div>
           <Arrow />

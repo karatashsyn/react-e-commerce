@@ -4,10 +4,11 @@
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-between;
-  column-gap: 12px;
+  column-gap: 1.6rem;
   row-gap: 12px;
   padding: 0 32px;
-  padding-top: 4rem;
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
   align-items: start;
 }
 .productsContainer > * {
@@ -35,10 +36,12 @@
 @media screen and (max-width: 1200px) {
   .productsContainer {
     grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1.6rem;
   }
 }
 @media screen and (max-width: 920px) {
   .productsContainer {
+    column-gap: 0.5rem;
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -48,6 +51,6 @@
   }
   .productsContainer {
     grid-template-columns: 1fr;
-    padding: 0 1rem;
+    padding: 0 12%;
   }
 }

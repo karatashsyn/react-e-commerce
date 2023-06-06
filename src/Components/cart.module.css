@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: var(--white-background);
 }
 
 .productsContainer {
@@ -90,16 +91,21 @@
   text-decoration: underline;
 }
 .downActionsContainer .confirm {
-  background-color: var(--layer-green);
-  color: var(--text-green);
+  background-color: var(--main-purple);
+  color: white;
+
   transition: background-color 0.2s;
 }
 .downActionsContainer .confirm:hover {
-  background-color: var(--hovered-layer-green);
+  background-color: #7519d2;
 }
 
-.noProductsContainer {
+.noProductContainer {
+  padding: 2rem;
   text-align: center;
+}
+.noProductContainer span {
+  color: rgb(152, 152, 152);
 }
 .noProductsSpan {
   font-size: 24px;

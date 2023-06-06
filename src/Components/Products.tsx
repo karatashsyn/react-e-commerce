@@ -4,7 +4,7 @@ import { Product } from "../Types/Product"
 import ProductCard from "./ProductCard"
 import Loading from "./UI/Loading"
 import styles from "./products.module.css"
-export default function ProductsBox() {
+export default function ProductsBox({ productActions }: any) {
   const [pageNumber, setPageNumber] = useState(1)
   const { products, loading, hasMore, error } = useSearchProducts(
     pageNumber,
@@ -42,11 +42,20 @@ export default function ProductsBox() {
               if (products.length === index + 1) {
                 return (
                   <div key={p.id} ref={lastProduct}>
-                    <ProductCard product={p} />
+                    <ProductCard
+                      product={p}
+                      addToCart={productActions.addToCart}
+                    />
                   </div>
                 )
               } else {
-                return <ProductCard key={p.id} product={p} />
+                return (
+                  <ProductCard
+                    key={p.id}
+                    product={p}
+                    addToCart={productActions.addToCart}
+                  />
+                )
               }
             })}
           </div>

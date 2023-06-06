@@ -52,7 +52,7 @@
 .productName {
   font-size: 20px;
   color: var(--text-dark);
-  font-weight: 500;
+  font-weight: 600;
   width: max-content;
 }
 .additionalInfoContainer {
@@ -146,11 +146,13 @@
 }
 
 .addBtn {
-  background-color: var(--layer-green);
+  background-color: var(--main-purple);
+  color: white;
 }
 
 .deleteBtn {
-  background-color: var(--button-red);
+  border: 2px solid var(--main-purple);
+  /* background-color: rgb(79, 79, 79); */
 }
 
 .priceContainer {

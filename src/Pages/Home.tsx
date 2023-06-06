@@ -1,11 +1,10 @@
 import ".././Styles/global.css"
-import Filters from "./../Components/Filters"
 import ProductsBox from "../Components/Products"
 import { useSelector } from "react-redux/es/hooks/useSelector"
 import Navbar from "../Components/Navbar"
 import styles from "./home.module.css"
 import { useRef, useState, useEffect } from "react"
-export default function Home({ cartHandlers }: any) {
+export default function Home({ cartHandlers, productActions }: any) {
   const cartProducts = useSelector((state: any) => state.cart)
 
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY)
@@ -31,6 +30,7 @@ export default function Home({ cartHandlers }: any) {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevScrollPos])
 
   return (
@@ -40,7 +40,7 @@ export default function Home({ cartHandlers }: any) {
           <Navbar cartProducts={cartProducts} cartHandlers={cartHandlers} />
         </div>
         <div className={styles.productsPart}>
-          <ProductsBox />
+          <ProductsBox productActions={productActions} />
         </div>
       </div>
     </>

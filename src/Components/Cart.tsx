@@ -63,7 +63,7 @@ export default function Cart(props: any) {
           </div>
           <div className={styles.noProductContainer}>
             <span className={styles.noProductsSpan}>
-              There is no product in your cart.
+              No product in your cart.
             </span>
           </div>
         </div>
