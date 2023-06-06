@@ -36,7 +36,7 @@ export default function CartProduct({ cartObject }: any) {
           </div>
           <div className={styles.ratingInfoContainer}>
             <div className={styles.ratingIconContainer}>
-              <img src='../../assets/Rating.svg' alt='Rating' />
+              <img src='assets/Rating.svg' alt='Rating' />
             </div>
             <span className={`${styles.ratingInfoSpan} ${styles.infoSpan}`}>
               {product.rating}

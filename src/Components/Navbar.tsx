@@ -26,7 +26,7 @@ const Navbar = forwardRef(({ cartProducts, cartHandlers }: any, ref: any) => {
               <img
                 className={styles.navIcon}
                 src='assets/User.svg'
-                alt='user'
+                alt='User'
               />
             </div>
             <span className={styles.iconSpan}>PROFILE</span>

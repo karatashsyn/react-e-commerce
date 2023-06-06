@@ -43,14 +43,11 @@
   justify-content: center;
   gap: 8px;
   height: 42px;
-  border-radius: 2px;
+  border-radius: 0.24rem;
   cursor: pointer;
-  padding: 1rem 4rem;
+  padding: 0rem 4rem;
   margin-right: 36px;
-  background-color: rgb(255, 255, 255);
-  border-top-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  border: 2px solid black;
+  background-color: rgb(52, 52, 52);
   transition: 0.2s;
   margin-left: 1rem;
 }
@@ -58,7 +55,7 @@
 .cartBtn span {
   font-weight: 600;
   font-size: 24px;
-  color: black;
+  color: white;
 }
 
 .cartBtn > * {
