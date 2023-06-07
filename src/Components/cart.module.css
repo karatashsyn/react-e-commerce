@@ -58,6 +58,9 @@
 .down .totalSpan {
   margin-right: 8px;
 }
+.down .totalSpanContainer {
+  flex-basis: 60%;
+}
 
 .down .dollarSpan {
   font-size: 36px;
@@ -67,7 +70,7 @@
 }
 
 .down .totalInfoSpan {
-  font-size: 42px;
+  font-size: 2rem;
   color: var(--text-dark);
   font-weight: bold;
 }
@@ -75,6 +78,10 @@
 .downActionsContainer {
   display: flex;
   gap: 4px;
+  width: auto;
+}
+.downActionsContainer > * {
+  flex-basis: 100%;
 }
 .downBtn {
   height: 42px;
@@ -111,4 +118,17 @@
   font-size: 24px;
   font-weight: 700;
   color: var(--layer-green);
+}
+
+@media screen and (max-width: 1200px) {
+  .down {
+    flex-direction: column;
+  }
+  .downActionsContainer {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .downActionsContainer > * {
+    flex-basis: 100%;
+  }
 }

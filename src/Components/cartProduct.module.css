@@ -173,3 +173,16 @@
   font-size: 28px;
   color: var(--text-dark);
 }
+
+@media screen and (max-width: 1200px) {
+  .imgContainer,
+  .imgMask {
+    display: none;
+  }
+  .productPrice {
+    font-size: 1rem;
+  }
+  .dollarSpan {
+    font-size: 1rem;
+  }
+}
