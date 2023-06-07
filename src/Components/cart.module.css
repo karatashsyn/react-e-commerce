@@ -53,13 +53,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .down .totalSpan {
   margin-right: 8px;
-}
-.down .totalSpanContainer {
-  flex-basis: 60%;
 }
 
 .down .dollarSpan {
@@ -70,7 +68,7 @@
 }
 
 .down .totalInfoSpan {
-  font-size: 2rem;
+  font-size: 42px;
   color: var(--text-dark);
   font-weight: bold;
 }
@@ -78,7 +76,9 @@
 .downActionsContainer {
   display: flex;
   gap: 4px;
-  width: auto;
+  flex-wrap: 100;
+  width: 100%;
+  margin-top: 2rem;
 }
 .downActionsContainer > * {
   flex-basis: 100%;
@@ -120,15 +120,19 @@
   color: var(--layer-green);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 720px) {
   .down {
-    flex-direction: column;
+    /* flex-direction: column; */
+  }
+  .totalInfoSpan {
+    font-size: 1px;
   }
   .downActionsContainer {
-    margin-top: 2rem;
+    flex-direction: column;
     width: 100%;
+    height: 96px;
   }
   .downActionsContainer > * {
-    flex-basis: 100%;
+    width: 100%;
   }
 }
